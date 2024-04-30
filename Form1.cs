@@ -31,19 +31,7 @@ namespace Metrics_COCOMO
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CoMode bmode = new BasicCoMode();
-            CoModeCeof? becoefs = bmode[CoProjectType.Embedded];
             
-            if (becoefs != null)
-                MessageBox.Show(string.Format("[Basic COCOMO] Coefficients - Embedded access example:\n\nA = {0}\nB = {1}\nC = {2}\nD = {3}", becoefs.A, becoefs.B, becoefs.C, becoefs.D));
-
-
-
-            CoMode imode = new IntermediateCoMode();
-            CoModeCeof? iocoefs = imode[CoProjectType.Organic];
-
-            if (iocoefs != null)
-                MessageBox.Show(string.Format("[Intermediate COCOMO] Coefficients - Organic access example:\n\nA = {0}\nB = {1}\nC = {2}\nD = {3}", iocoefs.A, iocoefs.B, iocoefs.C, iocoefs.D));
         }
     }
 }

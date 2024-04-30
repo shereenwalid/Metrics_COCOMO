@@ -8,6 +8,7 @@ namespace Metrics_COCOMO.COCOMO
 {
     public enum CoProjectType : byte
     {
+        None = 0,
         Organic,
         SemiDetached,
         Embedded

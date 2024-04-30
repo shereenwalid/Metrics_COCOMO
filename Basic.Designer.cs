@@ -52,6 +52,7 @@
             // KLOC_Effort
             // 
             KLOC_Effort.Location = new Point(162, 84);
+            KLOC_Effort.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             KLOC_Effort.Name = "KLOC_Effort";
             KLOC_Effort.Size = new Size(120, 23);
             KLOC_Effort.TabIndex = 2;

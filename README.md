@@ -43,6 +43,6 @@ COCOMO is an industry-standard model that offers a structured approach to softwa
 - Choose the appropriate attribute you want to calculate: Effort or Development Time (TDEV)
 
 ## Screenshots
-
+<img width="802" alt="main" src="https://github.com/shereenwalid/Metrics_COCOMO/assets/93673791/bf89b6aa-8393-4a80-a9a5-ce54af656bb0">
 
 

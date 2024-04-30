@@ -16,5 +16,10 @@ namespace Metrics_COCOMO
         {
             InitializeComponent();
         }
+
+        private void Basic_Load(object sender, EventArgs e)
+        {
+            ModeBox.SelectedIndex = 0;
+        }
     }
 }

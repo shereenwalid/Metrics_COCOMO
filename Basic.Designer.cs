@@ -33,7 +33,7 @@
             CalcEffortBtn = new Button();
             CalcTDEVBtn = new Button();
             label2 = new Label();
-            comboBox1 = new ComboBox();
+            ModeBox = new ComboBox();
             EffortBox = new TextBox();
             TDEVBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)KLOC_Effort).BeginInit();
@@ -86,14 +86,15 @@
             label2.TabIndex = 3;
             label2.Text = "Mode";
             // 
-            // comboBox1
+            // ModeBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Oragnic", "Semi-detached", "Embedded" });
-            comboBox1.Location = new Point(506, 83);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(177, 23);
-            comboBox1.TabIndex = 4;
+            ModeBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            ModeBox.FormattingEnabled = true;
+            ModeBox.Items.AddRange(new object[] { "Automatic", "Oragnic", "Semi-detached", "Embedded" });
+            ModeBox.Location = new Point(506, 83);
+            ModeBox.Name = "ModeBox";
+            ModeBox.Size = new Size(177, 23);
+            ModeBox.TabIndex = 4;
             // 
             // EffortBox
             // 
@@ -122,7 +123,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(TDEVBox);
             Controls.Add(EffortBox);
-            Controls.Add(comboBox1);
+            Controls.Add(ModeBox);
             Controls.Add(label2);
             Controls.Add(CalcTDEVBtn);
             Controls.Add(CalcEffortBtn);
@@ -130,6 +131,7 @@
             Controls.Add(label1);
             Name = "Basic";
             Text = "Basic";
+            Load += Basic_Load;
             ((System.ComponentModel.ISupportInitialize)KLOC_Effort).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -142,7 +144,7 @@
         private Button CalcEffortBtn;
         private Button CalcTDEVBtn;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox ModeBox;
         private TextBox EffortBox;
         private TextBox TDEVBox;
     }

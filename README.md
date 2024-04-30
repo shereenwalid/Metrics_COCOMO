@@ -44,5 +44,6 @@ COCOMO is an industry-standard model that offers a structured approach to softwa
 
 ## Screenshots
 
-![COCOMO Model]([https://example.com/cocomo_model.png](https://drive.google.com/file/d/1pci-xZ0Lxd_OdoOQJgVqUXIxtBWZVvQQ/view?usp=sharing))
+![COCOMO Model](https://drive.google.com/file/d/1pci-xZ0Lxd_OdoOQJgVqUXIxtBWZVvQQ/view?usp=sharing)
+
 

@@ -70,6 +70,7 @@ namespace Metrics_COCOMO.Classes
 
            
             double effortWithoutEAF = a * Math.Pow(kloc, b);
+            
             effort = effortWithoutEAF * eaf;
 
             return effort;

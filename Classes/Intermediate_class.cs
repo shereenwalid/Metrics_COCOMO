@@ -49,7 +49,7 @@ namespace Metrics_COCOMO.Classes
                 throw new InvalidOperationException("Mode parameters are not initialized.");
             }
 
-            // Get the mode parameters based on the first digit of KLOC
+           
             double[] modeParameters;
             if (kloc < 50)
             {
@@ -64,14 +64,12 @@ namespace Metrics_COCOMO.Classes
                 modeParameters = Embedded;
             }
 
-            // Extracting a and b from the mode parameters
+           
             double a = (modeParameters[0]);
             double b = (modeParameters[1]);
 
-            // Calculate effort using the formula: a * (KLOC)^b
+           
             double effortWithoutEAF = a * Math.Pow(kloc, b);
-
-            // Multiply the effort by EAF
             effort = effortWithoutEAF * eaf;
 
             return effort;

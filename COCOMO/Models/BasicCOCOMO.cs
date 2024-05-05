@@ -9,14 +9,16 @@ namespace Metrics_COCOMO.COCOMO.Models
 {
     internal class BasicCOCOMO : COCOMO
     {
-        protected BasicCOCOMO(int kloc = 0) : base(kloc)
+        protected BasicCOCOMO(CoProjectType type, int kloc = 0) : base(type, kloc)
         {
             m_mode = new BasicCoMode();
         }
 
         protected override float GetEffort()
         {
-            throw new NotImplementedException();
+            CoModeCeof coefs = GetCoefficients();
+
+            return KLOC * coefs.A + coefs.B;
         }
 
         protected override float GetTDEV()

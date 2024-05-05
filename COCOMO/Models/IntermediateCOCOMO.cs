@@ -9,7 +9,7 @@ namespace Metrics_COCOMO.COCOMO.Models
 {
     internal class IntermediateCOCOMO : COCOMO
     {
-        protected IntermediateCOCOMO(int kloc = 0) : base(kloc)
+        protected IntermediateCOCOMO(CoProjectType type, int kloc = 0) : base(type, kloc)
         {
             m_mode = new IntermediateCoMode();
         }

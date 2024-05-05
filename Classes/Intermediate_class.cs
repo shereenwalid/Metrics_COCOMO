@@ -44,7 +44,7 @@ namespace Metrics_COCOMO.Classes
 
         public double calculateEffort(int kloc,double eaf)
         {
-            if (Organic == null || Semidetached == null || Embedded == null)
+            /*if (Organic == null || Semidetached == null || Embedded == null)
             {
                 throw new InvalidOperationException("Mode parameters are not initialized.");
             }
@@ -63,13 +63,14 @@ namespace Metrics_COCOMO.Classes
             {
                 modeParameters = Embedded;
             }
-
+            */
            
-            double a = (modeParameters[0]);
-            double b = (modeParameters[1]);
+            double a = (Mode[0]);
+            double b = (Mode[1]);
 
            
             double effortWithoutEAF = a * Math.Pow(kloc, b);
+            
             effort = effortWithoutEAF * eaf;
 
             return effort;
@@ -77,6 +78,11 @@ namespace Metrics_COCOMO.Classes
 
         public double calculateTDEV()
         {
+            double c = (Mode[2]);
+            double d = (Mode[3]);
+
+            double tdev = c * Math.Pow(effort, d);
+
             return tdev;
         }
     }

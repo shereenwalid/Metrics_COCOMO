@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,14 +37,43 @@ namespace Metrics_COCOMO.Classes
             {
                 Mode = Embedded;
             }
-            else{ 
+            else{
                 throw new ArgumentException("Invalid mode. Please choose 'organic', 'semidetached', or 'embedded'.");
             }
         }
 
         public double calculateEffort(int kloc,double eaf)
         {
-            effort = kloc * eaf;
+            if (Organic == null || Semidetached == null || Embedded == null)
+            {
+                throw new InvalidOperationException("Mode parameters are not initialized.");
+            }
+
+            // Get the mode parameters based on the first digit of KLOC
+            double[] modeParameters;
+            if (kloc < 50)
+            {
+                modeParameters = Organic;
+            }
+            else if (kloc >= 50 && kloc < 300)
+            {
+                modeParameters = Semidetached;
+            }
+            else
+            {
+                modeParameters = Embedded;
+            }
+
+            // Extracting a and b from the mode parameters
+            double a = (modeParameters[0]);
+            double b = (modeParameters[1]);
+
+            // Calculate effort using the formula: a * (KLOC)^b
+            double effortWithoutEAF = a * Math.Pow(kloc, b);
+
+            // Multiply the effort by EAF
+            effort = effortWithoutEAF * eaf;
+
             return effort;
         }
 

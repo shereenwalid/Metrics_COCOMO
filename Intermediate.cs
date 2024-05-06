@@ -84,12 +84,16 @@ namespace Metrics_COCOMO
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            // ####################### TESTING CODE! ADJUST THE EFFORT IN "Intermediate_class & USE MODE 
             int.TryParse(textBox1.Text, out int kloc);
             double eaf = inter.EAF;
             textBox2.Text = inter.calculateEffort(kloc, eaf).ToString();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = inter.calculateTDEV().ToString();
+        }
+
     }
 }

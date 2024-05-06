@@ -39,6 +39,8 @@
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
+            label4 = new Label();
+            label5 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -121,6 +123,7 @@
             button3.TabIndex = 7;
             button3.Text = "TDEV";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // textBox2
             // 
@@ -146,11 +149,33 @@
             textBox4.Size = new Size(140, 32);
             textBox4.TabIndex = 10;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(585, 318);
+            label4.Name = "label4";
+            label4.Size = new Size(134, 19);
+            label4.TabIndex = 11;
+            label4.Text = "PM (person months)";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(585, 386);
+            label5.Name = "label5";
+            label5.Size = new Size(55, 19);
+            label5.TabIndex = 12;
+            label5.Text = "Months";
+            // 
             // Intermediate
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label5);
+            Controls.Add(label4);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
@@ -181,5 +206,7 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private TextBox textBox4;
+        private Label label4;
+        private Label label5;
     }
 }

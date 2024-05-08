@@ -1,4 +1,5 @@
-﻿using Metrics_COCOMO.COCOMO;
+using Metrics_COCOMO.COCOMO;
+using Metrics_COCOMO.COCOMO.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,5 +42,24 @@ namespace Metrics_COCOMO
             }
             return CoProjectType.None;
         }
+
+        private void CalcEffortBtn_Click(object sender, EventArgs e)
+        {
+            CoProjectType mode = GetCoMode();
+
+            BasicCOCOMO cocomo = new BasicCOCOMO(mode, (int)KLOC_Effort.Value);
+            double effort = cocomo.CalculateEffort();
+            EffortBox.Text = effort.ToString();
+        }
+
+        private void CalcTDEVBtn_Click(object sender, EventArgs e)
+        {
+            CoProjectType mode = GetCoMode();
+
+            BasicCOCOMO cocomo = new BasicCOCOMO(mode, (int)KLOC_Effort.Value);
+            double tdev = cocomo.CalculateTDEV();
+            TDEVBox.Text = tdev.ToString();
+        }
+
     }
 }

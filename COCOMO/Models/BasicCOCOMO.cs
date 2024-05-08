@@ -1,4 +1,4 @@
-﻿using Metrics_COCOMO.COCOMO.Modes;
+using Metrics_COCOMO.COCOMO.Modes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,21 +9,36 @@ namespace Metrics_COCOMO.COCOMO.Models
 {
     internal class BasicCOCOMO : COCOMO
     {
-        protected BasicCOCOMO(CoProjectType type, int kloc = 0) : base(type, kloc)
+        public BasicCOCOMO(CoProjectType type, int kloc = 0) : base(type, kloc)
         {
             m_mode = new BasicCoMode();
+        }
+
+        public float CalculateEffort()
+        {
+            return GetEffort();
+        }
+
+        public float CalculateTDEV()
+        {
+            return GetTDEV();
         }
 
         protected override float GetEffort()
         {
             CoModeCeof coefs = GetCoefficients();
+            double effort = coefs.A * Math.Pow(KLOC, coefs.B);
 
-            return KLOC * coefs.A + coefs.B;
+            return (float)effort;
         }
 
         protected override float GetTDEV()
         {
-            throw new NotImplementedException();
+            CoModeCeof coefs = GetCoefficients();
+            double tdev = coefs.C * Math.Pow(GetEffort(), coefs.D);
+
+
+            return (float)tdev;
         }
     }
 }
